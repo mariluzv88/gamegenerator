@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Filters from './components/Filters';
+import Platforms from './components/Platforms';
+import games from './models/games';
+import genre from './models/genre';
+import platforms from './models/platforms';
 
 function App() {
+  // const [data,setData]= useState([])
+  // const [state,dispatch] = useReducer(reducer,{game:[""],toggleResult:true})
+
+  
+  // const getGame =()=>{
+  //    let random =Math.floor(Math.random()*2)
+  //    setGame = ()=>{
+  //     if(horror is che)
+  //    }
+    
+  // }
+  const [data,setData]=useState('')
+  const checkData = (e)=>{
+    console.log(e.target.value)
+    setData(e.target.value)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Game Generator</h1>
+      <h2>What Game Should You Play?</h2>
+      <Filters/>
+      {/* <Result/> */}
     </div>
   );
 }
